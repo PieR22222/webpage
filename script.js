@@ -123,15 +123,10 @@ emailEl.addEventListener('input', () => {
     }
 })
 
-submitBtn.addEventListener('click', () => {
+submitBtn.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default form submission
     if (emailValid && checkboxEl.checked && nameValid && sprayRepeatCounter > 1) {
-        gsap.to("svg > *", {
-            duration: .1,
-            opacity: 0,
-            stagger: {
-                each: 0.03,
-                from: 'random',
-                ease: 'none',
+        document.body.innerHTML = "<h1 style='text-align: center; margin-top: 50px;'>Happy Birthday Alyssa</h1>";
             }
         })
         gsap.to(".form-row", {
